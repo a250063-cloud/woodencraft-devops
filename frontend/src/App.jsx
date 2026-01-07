@@ -37,13 +37,20 @@ const App = () => {
         <Route path="/about" element={<About />} />
         <Route path="/ourstory" element={<OurStory />} />
         <Route path="/contact" element={<Contact />} />
+      <Route path="/admin" element={<AdminRoute />}>
+        <Route path="productlist" element={<ProductList />} />
+        <Route path="product/create" element={<ProductEdit />} />
+        <Route path="product/:id/edit" element={<ProductEdit />} />
+      </Route>
+    </Routes>
+ 
 
         {/* Admin routes */}
-        <Route path="/admin" element={<AdminRoute />}>
+        {/* <Route path="/admin" element={<AdminRoute />}>
           <Route path="productlist" element={<ProductList />} />
           <Route path="product/:id/edit" element={<ProductEdit />} />
         </Route>
-      </Routes>
+      </Routes> */}
     </div>
   );
 };
