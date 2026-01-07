@@ -32,3 +32,10 @@
     @apply font-serif text-gray-900;
   }
 }
+
+
+.mysection{
+  background-image: linear-gradient(rgba(0, 0, 0, 0.317),rgba(0, 0, 0, 0.646)),url('../public/img/bg.webp');
+  background-position: center;
+  background-size:auto;
+}

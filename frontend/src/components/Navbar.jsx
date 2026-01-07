@@ -39,12 +39,12 @@ const Navbar = () => {
         <nav className="bg-white shadow-md sticky top-0 z-50">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center h-16">
-                    {/* Logo */}
+                   
                     <Link to="/" className="flex-shrink-0 flex items-center">
                         <span className="font-serif text-2xl font-bold text-primary-800">WoodenCraft</span>
                     </Link>
 
-                    {/* Desktop Search */}
+                   
                     <form onSubmit={searchHandler} className="hidden md:flex flex-1 max-w-md mx-8">
                         <div className="relative w-full">
                             <input
@@ -60,7 +60,7 @@ const Navbar = () => {
                         </div>
                     </form>
 
-                    {/* Desktop Icons */}
+               
                     <div className="hidden md:flex items-center space-x-6">
                         {user ? (
                             <div className="flex items-center space-x-4">
@@ -93,7 +93,7 @@ const Navbar = () => {
                         </Link>
                     </div>
 
-                    {/* Mobile menu button */}
+              
                     <div className="md:hidden flex items-center">
                         <button
                             onClick={() => setIsOpen(!isOpen)}
