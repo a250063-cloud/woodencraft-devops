@@ -74,7 +74,8 @@ const FeaturedProducts = ({ keyword }) => {
                                 <img
                                     src={product.image.startsWith('http') ? product.image : `http://localhost:5000${product.image}`}
                                     alt={product.name}
-                                    className="w-full h-full object-center object-cover group-hover:opacity-75"
+                                    style={{border:'2px solid brown'}}
+                                    className="w-full h-full object-center object-contain group-hover:opacity-75"
                                     onError={(e) => { e.target.style.display = 'none' }}
                                 />
                             </div>

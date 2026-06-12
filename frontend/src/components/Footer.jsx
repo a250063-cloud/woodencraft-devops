@@ -18,8 +18,9 @@ const Footer = () => {
                     <div>
                         <h4 className="font-bold text-white mb-4">Quick Links</h4>
                         <ul className="space-y-2 text-sm">
+                             <li><a href="/" className="hover:text-white transition-colors cursor-pointer">Home</a></li>
                             <li><a href="/about" className="hover:text-white transition-colors cursor-pointer">About Us</a></li>
-                            <li><a href="#" className="hover:text-white transition-colors cursor-pointer">Shop</a></li>
+                            <li><a href="#shop" className="hover:text-white transition-colors cursor-pointer">Shop</a></li>
                             <li><a href="#" className="hover:text-white transition-colors cursor-pointer">Collections</a></li>
                             <li><a href="/contact" className="hover:text-white transition-colors cursor-pointer">Contact</a></li>
                         </ul>
