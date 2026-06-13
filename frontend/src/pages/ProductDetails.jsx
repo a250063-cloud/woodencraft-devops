@@ -98,12 +98,17 @@ const ProductDetails = () => {
                     {/* Image gallery */}
                     <div className="flex flex-col-reverse">
                         <div className="w-full aspect-w-1 aspect-h-1 bg-gray-100 rounded-lg overflow-hidden sm:aspect-w-2 sm:aspect-h-3">
-                            <img
+                            {/* <img
                                 // FIXED: Changed fallback URL port from 5000 to 5001
                                 src={product.image && (product.image.startsWith('http') ? product.image : `http://localhost:5001${product.image}`)}
                                 alt={product.name}
                                 className="w-full h-full object-center object-cover object-contain hover:scale-105 transition-transform duration-500"
-                            />
+                            /> */}
+                            <img
+    src={product.image && (product.image.startsWith('http') ? product.image : `http://localhost:5001${product.image}`)}
+    alt={product.name}
+    className="w-full h-full object-center object-cover"
+/>
                         </div>
                     </div>
 
