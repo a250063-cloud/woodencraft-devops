@@ -38,7 +38,7 @@ const Cart = () => {
         saveShippingAddress({ address, city, postalCode, country, contactNumber });
 
         try {
-            const response = await fetch('http://localhost:5000/api/orders', {
+            const response = await fetch('http://localhost:5001/api/orders', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -119,7 +119,7 @@ const Cart = () => {
                                             <li key={item._id} className="p-6 flex flex-col sm:flex-row items-center">
                                                 <div className="w-24 h-24 flex-shrink-0 bg-gray-100 rounded-lg overflow-hidden mb-4 sm:mb-0">
                                                     <img
-                                                        src={item.image.startsWith('http') ? item.image : `http://localhost:5000${item.image}`}
+                                                        src={item.image.startsWith('http') ? item.image : `http://localhost:5001${item.image}`}
                                                         alt={item.name}
                                                         className="w-full h-full object-cover"
                                                         onError={(e) => { e.target.style.display = 'none' }}

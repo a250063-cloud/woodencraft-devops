@@ -17,7 +17,7 @@ const Profile = () => {
     const fetchOrders = async () => {
         if (!userInfo) return;
         try {
-            const response = await fetch('http://localhost:5000/api/orders/myorders', {
+            const response = await fetch('http://localhost:5001/api/orders/myorders', {
                 headers: {
                     Authorization: `Bearer ${userInfo.token}`,
                 },
@@ -43,7 +43,7 @@ const Profile = () => {
 
             if (success && sessionId && userInfo) {
                 try {
-                    const response = await fetch('http://localhost:5000/api/orders/verify-payment', {
+                    const response = await fetch('http://localhost:5001/api/orders/verify-payment', {
                         method: 'PUT',
                         headers: {
                             'Content-Type': 'application/json',

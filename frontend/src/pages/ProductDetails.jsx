@@ -17,7 +17,8 @@ const ProductDetails = () => {
     useEffect(() => {
         const fetchProduct = async () => {
             try {
-                const response = await fetch(`http://localhost:5000/api/products/${id}`);
+                // FIXED: Changed port from 5000 to 5001
+                const response = await fetch(`http://localhost:5001/api/products/${id}`);
                 const data = await response.json();
                 if (response.ok) {
                     setProduct(data);
@@ -98,10 +99,10 @@ const ProductDetails = () => {
                     <div className="flex flex-col-reverse">
                         <div className="w-full aspect-w-1 aspect-h-1 bg-gray-100 rounded-lg overflow-hidden sm:aspect-w-2 sm:aspect-h-3">
                             <img
-                                src={product.image && (product.image.startsWith('http') ? product.image : `http://localhost:5000${product.image}`)}
+                                // FIXED: Changed fallback URL port from 5000 to 5001
+                                src={product.image && (product.image.startsWith('http') ? product.image : `http://localhost:5001${product.image}`)}
                                 alt={product.name}
                                 className="w-full h-full object-center object-cover object-contain hover:scale-105 transition-transform duration-500"
-                                onError={(e) => { e.target.style.display = 'none' }}
                             />
                         </div>
                     </div>
@@ -163,7 +164,6 @@ const ProductDetails = () => {
                                 </select>
                             </div>
                         </div>
-
 
                         <div className="mt-8 flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0">
                             <button

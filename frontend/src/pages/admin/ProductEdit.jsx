@@ -36,7 +36,7 @@ const ProductEdit = () => {
         setUploading(true);
 
         try {
-            const response = await fetch('http://localhost:5000/api/upload', {
+            const response = await fetch('http://localhost:5001/api/upload', {
                 method: 'POST',
                 body: formData,
                 headers: {
@@ -71,7 +71,7 @@ const ProductEdit = () => {
         if (isEditMode) {
             const fetchProduct = async () => {
                 try {
-                    const response = await fetch(`http://localhost:5000/api/products/${productId}`);
+                    const response = await fetch(`http://localhost:5001/api/products/${productId}`);
                     const data = await response.json();
                     if (response.ok) {
                         setName(data.name);
@@ -108,11 +108,11 @@ const ProductEdit = () => {
         };
 
         try {
-            let url = 'http://localhost:5000/api/products';
+            let url = 'http://localhost:5001/api/products';
             let method = 'POST';
 
             if (isEditMode) {
-                url = `http://localhost:5000/api/products/${productId}`;
+                url = `http://localhost:5001/api/products/${productId}`;
                 method = 'PUT';
             }
 
@@ -142,7 +142,7 @@ const ProductEdit = () => {
     const getDisplayImage = () => {
         if (imagePreview) return imagePreview;
         if (image) {
-            return image.startsWith('http') ? image : `http://localhost:5000${image}`;
+            return image.startsWith('http') ? image : `http://localhost:5001${image}`;
         }
         return null;
     };

@@ -14,7 +14,7 @@ const OrderDetails = () => {
     useEffect(() => {
         const fetchOrder = async () => {
             try {
-                const response = await fetch(`http://localhost:5000/api/orders/${id}`, {
+                const response = await fetch(`http://localhost:5001/api/orders/${id}`, {
                     headers: {
                         Authorization: `Bearer ${userInfo.token}`,
                     },
@@ -107,7 +107,7 @@ const OrderDetails = () => {
                                     <div key={index} className="flex items-center">
                                         <div className="w-16 h-16 bg-gray-100 rounded-lg overflow-hidden flex-shrink-0">
                                             <img
-                                                src={item.image.startsWith('http') ? item.image : `http://localhost:5000${item.image}`}
+                                                src={item.image.startsWith('http') ? item.image : `http://localhost:5001${item.image}`}
                                                 alt={item.name}
                                                 className="w-full h-full object-cover"
                                                 onError={(e) => { e.target.style.display = 'none' }}

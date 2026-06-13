@@ -15,8 +15,8 @@ const FeaturedProducts = ({ keyword }) => {
             try {
                 // If keyword exists, append it to the URL
                 const url = keyword
-                    ? `http://localhost:5000/api/products?keyword=${keyword}`
-                    : 'http://localhost:5000/api/products';
+                    ? `http://localhost:5001/api/products?keyword=${keyword}`
+                    : 'http://localhost:5001/api/products';
 
                 const response = await fetch(url)
                 const data = await response.json()
@@ -72,7 +72,7 @@ const FeaturedProducts = ({ keyword }) => {
                         >
                             <div className="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
                                 <img
-                                    src={product.image.startsWith('http') ? product.image : `http://localhost:5000${product.image}`}
+                                    src={product.image.startsWith('http') ? product.image : `http://localhost:5001${product.image}`}
                                     alt={product.name}
                                     style={{border:'2px solid brown'}}
                                     className="w-full h-full object-center object-contain group-hover:opacity-75"
