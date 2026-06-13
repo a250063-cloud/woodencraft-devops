@@ -10,9 +10,9 @@ services:
       - JWT_SECRET=${JWT_SECRET}
       - FRONTEND_URL=${FRONTEND_URL}
       - STRIPE_SECRET_KEY=${STRIPE_SECRET_KEY}
-    # ADD THIS PIECE: Maps container uploads to a permanent folder on your host machine
+    # ADD THESE TWO LINES BELOW:
     volumes:
-      - c:\ProgramData\Jenkins\woodencraft_uploads:/app/uploads
+      - c:\woodencraft_permanent_uploads:/app/uploads
 
   frontend:
     build: ./frontend
