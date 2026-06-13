@@ -2,10 +2,10 @@ services:
   backend:
     build: ./backend
     ports:
-      - "5001:5001"   # Maps your local machine port 5001 to container port 5001
+      - "5001:5000"   # Maps your computer's port 5001 to the container's internal port 5000
     restart: always
     environment:
-      - PORT=${PORT}
+      - PORT=5000     # Force the internal app to run on 5000 where it wants to be
       - MONGO_URI=${MONGO_URI}
       - JWT_SECRET=${JWT_SECRET}
       - FRONTEND_URL=${FRONTEND_URL}
