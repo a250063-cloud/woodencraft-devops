@@ -2,11 +2,14 @@ services:
   backend:
     build: ./backend
     ports:
-      - "5001:5000"
+      - "5001:5001"   # Maps your local machine port 5001 to container port 5001
     restart: always
-    # ADD THESE TWO LINES:
-    env_file:
-      - ./backend/.env
+    environment:
+      - PORT=${PORT}
+      - MONGO_URI=${MONGO_URI}
+      - JWT_SECRET=${JWT_SECRET}
+      - FRONTEND_URL=${FRONTEND_URL}
+      - STRIPE_SECRET_KEY=${STRIPE_SECRET_KEY}
 
   frontend:
     build: ./frontend
